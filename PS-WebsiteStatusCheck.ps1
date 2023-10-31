@@ -1,6 +1,6 @@
 ﻿<#
 .Synopsis
-   Perfoms basic website check for status and keyword search. 
+   Perfoms basic website check for status and keyword search.
 .DESCRIPTION
    Perfoms basic website check for status and saves file for keyword search. 
    Write results to event log for monitoring detection. 
@@ -8,14 +8,16 @@
    .\PS-WebsiteCheck.ps1 -url https://google.com -SearchString "Google" -workingDir C:\temp
 .INPUTS
    URL - Website address (requires full HTTPS://).
+   SearchString - String of text that the script will look for in the websites code.
+   WorkingDir - Location to store output file and downloaded website file.
 .OUTPUTS
-   Writes to terminal and to Event Log. 
+   Writes results to terminal and to Windows Event Log. 
 #>
 
 param(
   [string]$url,
   [string]$SearchString,
-  [string]$workingDir = "C:\Temp"
+  [string]$workingDir
 )
 
 function Get-WebsiteStatus{
