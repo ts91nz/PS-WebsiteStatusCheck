@@ -1,22 +1,15 @@
 # PS-WebsiteStatusCheck
-Powershell: Perfoms basic website check for status and keyword search.
+Perfoms basic website check for status and keyword search using Powershell.
+Writes results to event log for monitoring system detection. 
 
+### EXAMPLE
+.\PS-WebsiteCheck.ps1 -url https://google.com -SearchString "Google" -workingDir C:\temp
 
-.Synopsis
-   Perfoms basic website check for status and keyword search. 
+### Inputs
+URL - Website address (requires full HTTPS://).
+SearchString - String of text that the script will look for in the websites code. 
+WorkingDir - Location to store output file and downloaded website file. 
    
-.DESCRIPTION
-   Perfoms basic website check for status and saves file for keyword search. 
-   
-   Write results to event log for monitoring detection. 
-
-   
-.EXAMPLE
-   .\PS-WebsiteCheck.ps1 -url https://google.com -SearchString "Google" -workingDir C:\temp
-   
-.INPUTS
-   URL - Website address (requires full HTTPS://).
-   
-.OUTPUTS
-   Writes to terminal and to Event Log. 
+### Outputs
+Writes results to terminal and to Windows Event Log. 
    
